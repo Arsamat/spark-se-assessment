@@ -1,6 +1,6 @@
 import os
 basedir = os.path.abspath(os.path.dirname(__file__))
-postgres_local_base = 'sqlite:///'
+postgres_local_base = 'sqlite:///./diagnostic.db'
 database_name = 'diagnostic'
 
 
@@ -16,7 +16,7 @@ class DevelopmentConfig(BaseConfig):
     """Development configuration."""
     DEBUG = True
     BCRYPT_LOG_ROUNDS = 4
-    SQLALCHEMY_DATABASE_URI = postgres_local_base + database_name
+    SQLALCHEMY_DATABASE_URI = postgres_local_base
 
 
 class TestingConfig(BaseConfig):
